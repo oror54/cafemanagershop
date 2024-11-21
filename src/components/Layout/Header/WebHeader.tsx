@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Header.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
+import HeaderLogo from "@/assets/images/common/logo-character.svg"
 
 interface MenuItem {
     title: string;
@@ -20,7 +22,9 @@ export default function WebHeader({ menuItems, isScrolled }: WebHeaderProps) {
                     <Link
                         href={"#"}
                         className={styles.logo}>
-                        <div className={styles.img}></div>
+                        <div className={styles.img}>
+                            <Image src={HeaderLogo} alt="카페매니저" />
+                        </div>
                         <span>cafe manager</span>
                     </Link>
                 </h1>
