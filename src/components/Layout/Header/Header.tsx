@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WebHeader from './WebHeader';
 import MobileHeader from './MobileHeader';
+import styles from './Header.module.css';
 
 const menuItems = [
     {
@@ -26,8 +27,9 @@ const menuItems = [
 ];
 
 export default function Header() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,7 +44,9 @@ export default function Header() {
     };
 
     return (
-        <header id="header">
+        <header id="header" className={`${styles.header} ${isHovered ? styles.on : ''} ${isScrolled ? styles.fixed : ''}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}>
             <WebHeader menuItems={menuItems} isScrolled={isScrolled} />
             <MobileHeader
                 menuItems={menuItems}

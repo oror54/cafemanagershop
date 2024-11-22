@@ -16,7 +16,7 @@ interface WebHeaderProps {
 
 export default function WebHeader({ menuItems, isScrolled }: WebHeaderProps) {
     return (
-        <div className={`${styles.header} ${isScrolled ? styles.fixed : ''}`}>
+        <div className={`${styles.WebHeader} ${isScrolled ? styles.fixed : ''}`}>
             <div className={styles.wrap}>
                 <h1>
                     <Link
