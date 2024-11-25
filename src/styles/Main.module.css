@@ -46,3 +46,174 @@
   line-height: 140%;
   letter-spacing: -0.75px;
 }
+
+/* main -section02 */
+.section02 {
+  background-color: #fff;
+  display: flex;
+  padding: 100px 0;
+  flex-direction: column;
+  align-items: center;
+} /* main -section02 */
+.section02 .bestitems .swiper-slide.bestItem {
+  width: auto;
+}
+.section02 .swiper-slide.bestItem .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.section02 .swiper-slide.bestItem .product .img {
+  width: 400px;
+  height: 400px;
+}
+.section02 .swiper-slide.bestItem .product .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.section02 .swiper-slide.bestItem .product .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.section02 .swiper-slide.bestItem .product .text .cate {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.75px;
+  color: #f15a24;
+  font-family: "Paperlogy";
+}
+.section02 .swiper-slide.bestItem .product .text .name {
+  font-size: 20px;
+  letter-spacing: -0.75px;
+  color: #000;
+  font-family: "Paperlogy";
+}
+.section02 .bestItem .product .text .brand {
+  color: #555;
+  font-size: 16px;
+  letter-spacing: -0.75px;
+  font-family: "Paperlogy";
+}
+.section02 .bestItem .product .text .viewDetail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.section02 .bestItem .product .text .viewDetail span {
+  font-size: 14px;
+  letter-spacing: -0.75px;
+  font-weight: 500;
+  color: #000;
+  transition: all 0.3s;
+}
+.section02 .bestItem > .product .text .viewDetail .arrowRight {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  filter: grayscale(1) brightness(0);
+  transition: all 0.3s;
+}
+.section02 .bestItem .product .text .viewDetail:hover span {
+  color: #f15a24;
+  font-weight: 600;
+}
+.section02 .bestItem .product .text .viewDetail:hover .arrowRight {
+  filter: grayscale(0) brightness(1);
+}
+.section02 .bestitems .bestContr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+}
+.section02 .bestitems .swiper-pagination {
+  width: 100%;
+  position: relative;
+  height: 2px;
+  background-color: #e5e5e5;
+}
+.section02 .bestitems .swiper-pagination > span {
+  background-color: #f15a24;
+  height: 2px;
+}
+.section02
+  .bestitems
+  .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill {
+  width: 100%;
+}
+.section02 .bestitems .bestContr .contr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.section02 .bestitems .bestContr .contr .best-prev {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-size: contain;
+  filter: grayscale(1) brightness(0);
+  transition: all 0.3s;
+}
+.section02 .bestitems .bestContr .contr .best-prev:hover {
+  filter: grayscale(0) brightness(1);
+}
+.section02 .bestitems .bestContr .contr .bestNext {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-size: contain;
+  filter: grayscale(1) brightness(0);
+  transition: all 0.3s;
+}
+.section02 .bestitems .bestContr .contr .bestNext:hover {
+  filter: grayscale(0) brightness(1);
+}
+.section02 .bestitems .bestContr .contr .bestPlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  position: relative;
+  transition: all 0.3s;
+}
+.section02 .bestitems .bestContr .contr .bestPlay:hover {
+  background-color: #ff6e3a;
+  border-color: #ff6e3a;
+}
+.section02 .bestitems .bestContr .contr .bestPlay i.pause {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  transition: all 0.3s;
+}
+.section02 .bestitems .bestContr .contr .bestPlay i.start {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  display: none;
+  transition: all 0.3s;
+}
+.section02 .bestitems .bestContr .contr .bestPlay.on {
+  background-color: #ff6e3a;
+  border-color: #ff6e3a;
+}
+.section02 .bestitems .bestContr .contr .bestPlay.on i.start {
+  display: block;
+}
+.section02 .bestitems .bestContr .contr .bestPlay.on i.pause {
+  display: none;
+}

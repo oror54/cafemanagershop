@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import HeaderLogo from "@/assets/images/common/logo-character.svg"
+import HeaderLogo from "public/assets/images/common/logo-character.svg"
 
 
 interface MenuItem {

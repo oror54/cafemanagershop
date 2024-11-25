@@ -1,8 +1,8 @@
-import styles from '@/styles/Main.module.css';
+import styles from "@/styles/Main.module.css";
 
 export default function Section01() {
     return (
-        <section className={styles.section01} >
+        <section className={styles.section01}>
             <div className={styles.wrap}>
                 <div className={styles.title}>
                     <h3>카페매니저</h3>
