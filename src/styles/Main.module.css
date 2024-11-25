@@ -9,11 +9,48 @@
   width: 100%;
 }
 
+main .tit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+main .tit .point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+main .tit .point::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 20px;
+  background: url("$/tit_point.svg") 50% 50% no-repeat;
+  background-size: contain;
+}
+main .tit .point span {
+  color: #ff6e3a;
+  font-family: "Paperlogy";
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.75px;
+}
+main .tit h4 {
+  color: #000;
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
 /* main -section01 */
 .section01 {
   height: 100vh;
   width: 100%;
-  background: url("/assets/images/main/section01.jpg") 50% 50% no-repeat;
+  background: url("$/assets/images/main/section01.jpg") 50% 50% no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
