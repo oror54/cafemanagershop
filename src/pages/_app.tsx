@@ -2,7 +2,8 @@ import "@/styles/globals.css";
 import React from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import Header from "@/comomon/Header/Header";
+import Header from "@/common/Header/Header";
+
 
 //글로벌 css, 공통 레이아웃 , 테마나 상태관리
 export default function App({ Component, pageProps }: AppProps) {

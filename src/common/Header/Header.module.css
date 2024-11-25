@@ -3,19 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
   z-index: 5000;
-}
-
-.header.fixed {
-  background: #fff;
-  box-shadow: 0px 12px 14px -4px #dddddd25, 0px 8px 9px -6px #dddddd10;
-}
-
-.header.on {
-  background-color: #fff;
-}
-.WebHeader {
   padding-left: 40px;
   padding-right: 40px;
   border-bottom: 1px solid rgba(229, 229, 229, 0.3);
@@ -23,8 +11,23 @@
   display: flex;
   transition: 0.3s;
 }
+.header.fixed {
+  background: #fff;
+  box-shadow: 0px 12px 14px -4px #dddddd25, 0px 8px 9px -6px #dddddd10;
+}
+.header.on {
+  color: #222;
+  background-color: #fff;
+}
+.WebHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .WebHeader > .wrap {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -61,12 +64,10 @@
   color: #fff;
   transition: all 0.3s;
 }
-
-.WebHeader .wrap h1 .logo span {
-  color: #fff;
+.header.on .wrap h1 .logo span {
+  color: #000;
 }
-.header.on .WebHeader .wrap h1 .logo span,
-.header.fixed .WebHeader .wrap h1 .logo span {
+.header.fixed .wrap h1 .logo span {
   color: #000;
 }
 .gnb {
@@ -209,14 +210,11 @@
   .header {
     height: 80px;
   }
-  .header.fixed {
-    background: #fff;
-  }
-
   .WebHeader {
     display: none;
   }
   .mHeader {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -226,6 +224,10 @@
     height: 80px;
     display: flex;
     transition: 0.3s;
+  }
+  .mHeader.fixed {
+    display: flex;
+    background: #fff;
   }
   .mHeader.on {
     color: #222;
@@ -288,10 +290,7 @@
   .header.fixed .mHeader .wrap h1 .logo span {
     color: #000;
   }
-  .header .mHeader.fixed .wrap h1 .logo span {
-    color: #000;
-  }
-  .mHeader.act .wrap h1 .logo span {
+  .header.act .mHeader .wrap h1 .logo span {
     color: #000;
   }
   .mHeader .mBtn {

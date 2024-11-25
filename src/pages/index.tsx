@@ -1,4 +1,4 @@
-import Section01 from "./main/Section01";
+import Section01 from "./main/section01";
 
 
 export default function Home() {
