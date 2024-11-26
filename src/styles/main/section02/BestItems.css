@@ -1,0 +1,103 @@
+
+.best-contr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+}
+.swiper-pagination {
+  width: 100%;
+  position: relative;
+  height: 2px;
+  background-color: #e5e5e5;
+}
+.swiper-pagination > span {
+  background-color: #f15a24;
+  height: 2px;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  background-color: #f15a24;
+}
+.swiper-pagination-progressbar-fill {
+  width: 100%;
+}
+.best-contr .contr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.best-contr .contr .best-prev {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: url($/assets/images/main/section02/Arrow-Left-slide.svg) 50% 50% no-repeat;
+  background-size: contain;
+  filter: grayscale(1) brightness(0);
+  transition: all 0.3s;
+}
+.best-contr .contr .best-prev:hover {
+  filter: grayscale(0) brightness(1);
+}
+.best-contr .contr .best-next {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: url($/assets/images/main/section02/Arrow-Right-slide.svg) 50% 50% no-repeat;
+  background-size: contain;
+  filter: grayscale(1) brightness(0);
+  transition: all 0.3s;
+}
+.best-contr .contr .best-next:hover {
+  filter: grayscale(0) brightness(1);
+}
+.best-contr .contr .best-play {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  position: relative;
+  transition: all 0.3s;
+}
+.best-contr .contr .best-play:hover {
+  background-color: #ff6e3a;
+  border-color: #ff6e3a;
+}
+.best-contr .contr .best-play i.pause {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url($/assets/images/main/section02/stop-slide.svg) 50% 50% no-repeat;
+  background-size: contain;
+  transition: all 0.3s;
+}
+.best-contr .contr .best-play i.start {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url($/assets/images/main/section02/start-icon.svg) 50% 50% no-repeat;
+  background-size: contain;
+  display: none;
+  transition: all 0.3s;
+}
+.best-contr .contr .best-play.on {
+  background-color: #ff6e3a;
+  border-color: #ff6e3a;
+}
+.best-contr .contr .best-play.on i.start {
+  display: block;
+}
+.best-contr .contr .best-play.on i.pause {
+  display: none;
+}
+
+
+@media screen and (max-width: 800px){
+  .best-contr .contr { display: none; } 
+}

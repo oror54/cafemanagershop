@@ -1,4 +1,4 @@
-import Section01 from "./main/section01";
+import Section01 from "./main/Section01";
 import Section02 from "./main/Section02";
 
 
