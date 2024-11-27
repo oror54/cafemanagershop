@@ -1,0 +1,281 @@
+.swiperContainer {
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.new-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+  max-width: 100%;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+  transition: padding 1.5s, opacity 1.5s;
+  opacity: 0.7;
+  height: 500px;
+}
+.new-item.swiper-slide-active {
+  opacity: 1;
+}
+.new-item .pdt-img {
+  width: 100%;
+  height: 500px;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.85s;
+}
+.new-item .pdt-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  max-width: none !important;
+  width: 100%;
+  vertical-align: top;
+  transition: opacity 0.35s;
+}
+.new-item .pdt-img .controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 10;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.new-item .pdt-img .controls .control {
+  opacity: 0.3;
+  transition: opacity 0.25s;
+  width: 80px;
+  height: 80px;
+}
+.new-item .pdt-img .controls .control.new-prev {
+  display: block;
+  background: url($/assets/images/main/section04/arrow-left-big.svg) no-repeat
+    50% 50%;
+  background-size: contain;
+  filter: grayscale(1) brightness(10);
+  transition: all 0.3s;
+  left: 0;
+}
+.new-item .pdt-img .controls .control.new-next {
+  display: block;
+  background: url($/assets/images/main/section04/arrow-right-big.svg) no-repeat
+    50% 50%;
+  background-size: contain;
+  filter: grayscale(1) brightness(10);
+  transition: all 0.3s;
+  right: 0;
+}
+.new-item .pdt-img .controls .control:hover {
+  opacity: 1;
+}
+.new-item.swiper-slide-next,
+.new-item.swiper-slide-prev {
+  justify-content: flex-end;
+}
+.new-item.swiper-slide-next .ptd-info,
+.new-item.swiper-slide-prev .ptd-info {
+  opacity: 0;
+  width: 0;
+  margin-left: 0;
+  -webkit-transform: translateX(-50%) scaleX(0);
+  -ms-transform: translateX(-50%) scaleX(0);
+  transform: translateX(-50%) scaleX(0);
+}
+.new-item.swiper-slide-active {
+  opacity: 1;
+}
+.ptd-info {
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: space-between;
+  margin-left: 60px;
+  position: relative;
+  transition: margin 0.85s, height 0.85s, width 0.5s, opacity 0.25s,
+    transform 0.85s;
+}
+.ptd-info .info-txt {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+.ptd-info .info-txt .txt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+}
+.ptd-info .info-txt .txt .p-cate {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.75px;
+  color: #f15a24;
+  font-family: "Paperlogy";
+}
+.ptd-info .info-txt .txt .p-name {
+  font-size: 20px;
+  letter-spacing: -0.75px;
+  color: #000;
+  font-family: "Paperlogy";
+}
+.ptd-info .info-txt .txt .p-brand {
+  color: #555;
+  font-size: 16px;
+  letter-spacing: -0.75px;
+  font-family: "Paperlogy";
+}
+.ptd-info .info-txt .view-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ptd-info .info-txt .view-detail span {
+  font-size: 14px;
+  letter-spacing: -0.75px;
+  font-weight: 500;
+  color: #000;
+  transition: all 0.3s;
+}
+.ptd-info .info-txt .view-detail .arrow-right {
+  width: 24px;
+  height: 24px;
+  background: url($/assets/images/main/section04/arrow-right-view.svg) no-repeat
+    50% 50%;
+  background-size: contain;
+  filter: grayscale(1) brightness(0);
+  transition: all 0.3s;
+}
+.ptd-info .info-txt .view-detail:hover span {
+  color: #f15a24;
+  font-weight: 600;
+}
+.ptd-info .info-txt .view-detail:hover .arrow-right {
+  filter: grayscale(0) brightness(1);
+}
+.ptd-info .p-pack {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-top: 1px solid #909090;
+  padding: 25px;
+  position: relative;
+}
+.ptd-info .p-pack img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.35s;
+}
+.new-pagination {
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .new-item {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: auto;
+  }
+  .new-item.swiper-slide-next,
+  .new-item.swiper-slide-prev {
+    justify-content: center;
+  }
+  .new-item.swiper-slide-next .ptd-info,
+  .new-item.swiper-slide-prev .ptd-info {
+    opacity: 1;
+    width: 100%;
+    transform: none;
+  }
+  .new-item .pdt-img {
+    height: auto;
+    border-radius: 0;
+  }
+  .new-item .pdt-img img {
+    border-radius: 0;
+    vertical-align: top;
+    position: static;
+    transform: none;
+    max-width: 100% !important;
+    height: 100%;
+  }
+  .ptd-info {
+    max-height: none;
+    width: 100%;
+    margin-left: 0;
+    transition: none;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .ptd-info .p-pack {
+    display: none;
+    position: relative;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .ptd-info .p-pack img {
+    width: auto;
+  }
+  .new-pagination {
+    display: block;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(0%, -40px);
+  }
+  .new-pagination span {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #f15a24;
+    opacity: 1;
+  }
+  .new-pagination span.swiper-pagination-bullet-active {
+    background-color: #f15a24;
+  }
+  .new-pagination span + span {
+    margin-left: 8px;
+  }
+  .ptd-info .info-txt .view-detail span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ptd-info {
+    padding-top: 0;
+  }
+  .new-item .pdt-img .controls {
+    display: none;
+  }
+}

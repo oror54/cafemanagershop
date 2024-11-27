@@ -1,27 +1,109 @@
+.swiperContainer {
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
 
+.swiper-slide.best-item {
+  width: auto;
+}
+.best-item .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.best-item .product .img {
+  width: 400px;
+  height: 400px;
+}
+.best-item .product .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.best-item .product .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.best-item .product .text .p-cate {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.75px;
+  color: #f15a24;
+  font-family: "Paperlogy";
+}
+.best-item .product .text .p-name {
+  font-size: 20px;
+  letter-spacing: -0.75px;
+  color: #000;
+  font-family: "Paperlogy";
+}
+.best-item .product .text .p-brand {
+  color: #555;
+  font-size: 16px;
+  letter-spacing: -0.75px;
+  font-family: "Paperlogy";
+}
+.best-item .product .text .view-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.best-item .product .text .view-detail span {
+  font-size: 14px;
+  letter-spacing: -0.75px;
+  font-weight: 500;
+  color: #000;
+  transition: all 0.3s;
+}
+.best-item > .product .text .view-detail .arrow-right {
+  width: 24px;
+  height: 24px;
+  background: url($/assets/images/main/section02/arrow-right-view.svg) no-repeat
+    50% 50%;
+  background-size: contain;
+  filter: grayscale(1) brightness(0);
+  transition: all 0.3s;
+}
+.best-item .product .text .view-detail:hover span {
+  color: #f15a24;
+  font-weight: 600;
+}
+.best-item .product .text .view-detail:hover .arrow-right {
+  filter: grayscale(0) brightness(1);
+}
 .best-contr {
+  max-width: 1600px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   padding: 50px 20px;
 }
-.swiper-pagination {
+
+.best-pagination {
   width: 100%;
   position: relative;
   height: 2px;
   background-color: #e5e5e5;
 }
-.swiper-pagination > span {
+
+.best-pagination > span {
   background-color: #f15a24;
   height: 2px;
 }
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+.swiper-pagination-progressbar-fill {
   background-color: #f15a24;
 }
-.swiper-pagination-progressbar-fill {
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #f15a24;
   width: 100%;
 }
+
 .best-contr .contr {
   display: flex;
   align-items: center;
@@ -32,7 +114,8 @@
   width: 30px;
   height: 30px;
   display: block;
-  background: url($/assets/images/main/section02/Arrow-Left-slide.svg) 50% 50% no-repeat;
+  background: url($/assets/images/main/section02/Arrow-Left-slide.svg) no-repeat
+    50% 50%;
   background-size: contain;
   filter: grayscale(1) brightness(0);
   transition: all 0.3s;
@@ -44,7 +127,8 @@
   width: 30px;
   height: 30px;
   display: block;
-  background: url($/assets/images/main/section02/Arrow-Right-slide.svg) 50% 50% no-repeat;
+  background: url($/assets/images/main/section02/Arrow-Right-slide.svg)
+    no-repeat 50% 50%;
   background-size: contain;
   filter: grayscale(1) brightness(0);
   transition: all 0.3s;
@@ -73,7 +157,8 @@
   display: block;
   width: 20px;
   height: 20px;
-  background: url($/assets/images/main/section02/stop-slide.svg) 50% 50% no-repeat;
+  background: url($/assets/images/main/section02/stop-slide.svg) no-repeat 50%
+    50%;
   background-size: contain;
   transition: all 0.3s;
 }
@@ -81,7 +166,8 @@
   display: block;
   width: 20px;
   height: 20px;
-  background: url($/assets/images/main/section02/start-icon.svg) 50% 50% no-repeat;
+  background: url($/assets/images/main/section02/start-icon.svg) no-repeat 50%
+    50%;
   background-size: contain;
   display: none;
   transition: all 0.3s;
@@ -97,7 +183,8 @@
   display: none;
 }
 
-
-@media screen and (max-width: 800px){
-  .best-contr .contr { display: none; } 
+@media screen and (max-width: 800px) {
+  .best-contr .contr {
+    display: none;
+  }
 }

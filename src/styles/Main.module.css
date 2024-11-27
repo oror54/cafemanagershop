@@ -91,4 +91,287 @@ main .tit h4 {
   padding: 100px 0;
   flex-direction: column;
   align-items: center;
-} /* main -section02 */
+}
+
+/* main -section03 */
+.section03 {
+  width: 100%;
+  background: url("$/assets/images/main/sec3-bg.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 100px 0;
+}
+.section03 .brandBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.section03 .brandBox > .tit h3 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.75px;
+  font-family: "Paperlogy";
+}
+.section03 .brandBox > .tit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.section03 .brandBox .linkWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.section03 .brandBox .linkWrap .link {
+  background-color: #fff;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.section03 .brandBox .linkWrap .link .logo {
+  width: 100px;
+  height: 30px;
+  display: block;
+}
+.section03 .brandBox .linkWrap .link .logo.apple {
+  background: url("$/assets/images/main/apple-logo.svg") 50% 50% no-repeat;
+  background-size: contain;
+}
+.section03 .brandBox .linkWrap .link .logo.google {
+  background: url("$/assets/images/main/googleplay-logo.svg") 50% 50% no-repeat;
+  background-size: contain;
+}
+
+/* main -section04 */
+.section04 {
+  background-color: #fffbeb;
+  display: flex;
+  padding: 100px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+
+/* main -section05 */
+.section05 {
+  background-color: #fff;
+  display: flex;
+  padding: 100px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+.section05 .wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.thumbBox {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  border-radius: 40px;
+  overflow: hidden;
+}
+.thumbBox .thumbImg {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  width: 100%;
+}
+.thumbBox .thumbImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumbBox .thumbTxt {
+  max-width: 600px;
+  width: 100%;
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.thumbBox .thumbTxt .thbTit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.thumbBox .thumbTxt .thbTit p {
+  font-size: 20px;
+  letter-spacing: -0.75px;
+  color: #ffcc00;
+  font-family: "GmarketSans";
+}
+.thumbBox .thumbTxt .thbTit h3 {
+  font-size: 33px;
+  letter-spacing: -0.75px;
+  color: #fff;
+  font-family: "GmarketSans";
+  font-weight: 700;
+}
+.thumbBox .thumbTxt .thbTxt {
+  max-width: 267px;
+  text-align: center;
+}
+.thumbBox .thumbTxt .thbTxt p {
+  font-size: 20px;
+  letter-spacing: -0.75px;
+  line-height: 1.4;
+  font-family: "Paperlogy";
+  color: #fff;
+  font-weight: 400;
+  word-break: keep-all;
+}
+.thumbBox .thumbTxt .btn {
+  width: 180px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+.thumbBox .thumbTxt .kakaoBtn {
+  background-color: #f9e000;
+}
+.thumbBox .thumbTxt .kakaoBtn p {
+  color: #371c1d;
+  font-family: "Paperlogy";
+  font-size: 16px;
+  font-weight: 700;
+}
+.thumbBox .playBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.65);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+}
+.thumbBox .playBtn::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url("$/assets/images/main/section05/play-icon.svg") 50% 50%
+    no-repeat;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+}
+.thumbBox .playBtn,
+.section05 .thumbBox .playBtn::before {
+  transition: all 0.35s, transform 0.4s;
+}
+.thumbBox .playBtn:hover {
+  background-color: rgba(252, 204, 49, 0.85);
+}
+.thumbBox .playBtn:active {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.thumbBox .playBtn:hover::before {
+  filter: grayscale(1) brightness(10);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* 모달 콘텐츠 */
+.modalContent {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 닫기 버튼 */
+.closeBtn {
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #727272;
+  border-radius: 10px;
+  color: #fff;
+  transition: all 0.3s;
+  letter-spacing: -0.75px;
+  line-height: 1.4;
+  font-family: "Paperlogy";
+  font-weight: 500;
+}
+.closeBtn:hover {
+  background-color: #000;
+  box-shadow: 0 4px 10px #dddddd;
+}
+/* 동영상 플레이어 */
+.videoPlayer {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  border: none;
+}
+
+@media screen and (max-width: 1280px) {
+  body.active {
+    overflow: hidden;
+  }
+  .thumbBox {
+    display: block;
+    height: auto;
+  }
+  .thumbBox .thumbImg {
+    order: 1;
+  }
+  .thumbBox .thumbTxt {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    padding: 50px 0;
+  }
+}
