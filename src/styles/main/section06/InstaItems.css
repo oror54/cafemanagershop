@@ -1,0 +1,145 @@
+.wrapper {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.instaSwiperContainer {
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.instaSwiperContainer .swiper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.instaSwiperContainer .swiper .swiper-wrapper {
+  display: flex;
+  min-width: auto;
+  flex-wrap: nowrap;
+}
+.insta-item {
+  padding: 10px;
+  width: 25%;
+  flex: none;
+}
+.insta-item .inner {
+  display: block;
+  position: relative;
+}
+.insta-item .inner .insta-img {
+  position: relative;
+  height: auto;
+}
+.insta-item .inner .insta-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.insta-item .inner .insta-hov {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: #fff;
+  opacity: 0;
+  background: rgba(22, 22, 22, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s, background 0.35s, transform 0.35s;
+  padding: 16px;
+  transform: rotate(-0.001deg);
+}
+.insta-item .inner:hover .insta-hov {
+  opacity: 1;
+  background: rgba(22, 22, 22, 0.8);
+  transform: rotate(-0.001deg);
+}
+.insta-item .inner .insta-hov .icon-insta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url($/assets/images/main/section06/instagram.svg) 50% 50%
+    no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+}
+.insta-item .inner .insta-hov .insta-sub {
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: -0.75px;
+  font-family: "Paperlogy";
+}
+.insta-controls {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-between;
+}
+.insta-controls .control {
+  opacity: 0.3;
+  transition: opacity 0.25s;
+  width: 80px;
+  height: 80px;
+}
+.insta-controls .control:hover {
+  opacity: 1;
+}
+.insta-controls .insta-prev {
+  display: block;
+  background: url($/assets/images/main/section06/arrow-left-big.svg) no-repeat
+    50% 50%;
+  background-size: contain;
+  filter: grayscale(0.5) brightness(0.5);
+  transition: all 0.3s;
+  left: 0;
+}
+.insta-controls .insta-next {
+  display: block;
+  background: url($/assets/images/main/section06/arrow-right-big.svg) no-repeat
+    50% 50%;
+  background-size: contain;
+  filter: grayscale(0.5) brightness(0.5);
+  transition: all 0.3s;
+  right: 0;
+}
+
+@media screen and (max-width: 1500px) {
+  .insta-controls {
+    display: none;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .instaSwiperContainer .swiper .swiper-wrapper {
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+  .instaitems {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .insta-item {
+    width: 25%;
+    flex: 0 1 auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .insta-item {
+    width: 50%;
+  }
+  .instaitems .insta-item .inner .insta-hov .insta-sub {
+    font-size: 12px;
+  }
+}

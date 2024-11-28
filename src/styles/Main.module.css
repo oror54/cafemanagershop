@@ -304,6 +304,49 @@ main .tit h4 {
   filter: grayscale(1) brightness(10);
 }
 
+/* main -section06 */
+.section06 {
+  background-color: #fffbeb;
+  display: flex;
+  padding: 100px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+.section06 .view {
+  padding-top: 10px;
+}
+.viewDetail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.viewDetail span {
+  font-size: 18px;
+  letter-spacing: -0.75px;
+  font-weight: 500;
+  color: #000;
+  transition: all 0.3s;
+}
+.viewDetail .arrowRight {
+  width: 24px;
+  height: 24px;
+  background: url($/assets/images/main/section06/arrow-right-view.svg) no-repeat
+    50% 50%;
+  background-size: contain;
+  filter: grayscale(1) brightness(0);
+  transition: all 0.3s;
+}
+.viewDetail:hover span {
+  color: #f15a24;
+  font-weight: 600;
+}
+.viewDetail:hover .arrowRight {
+  filter: grayscale(0) brightness(1);
+}
+
+/* 모달 */
 .modalOverlay {
   position: fixed;
   top: 0;
