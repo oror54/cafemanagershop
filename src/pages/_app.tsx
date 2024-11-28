@@ -6,7 +6,8 @@ import "@/styles/globals.css";
 import React from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import Layout from "@/components/Layout";
+import Header from '@/common/Header/Header';
+import Footer from '@/common/Footer/Footer';
 
 
 //글로벌 css, 공통 레이아웃 , 테마나 상태관리
@@ -20,9 +21,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* 공통 헤더 */}
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

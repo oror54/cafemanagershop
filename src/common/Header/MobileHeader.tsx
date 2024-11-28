@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,20 +10,36 @@ interface MobileHeaderProps {
   menuItems: MenuItemProps[];
   isMenuOpen: boolean;
   toggleMenu: () => void;
+  handleCategoryClick: (category: string) => void;
+  handleSubCategoryClick: (category: string, subCategory: string) => void;
 }
 
 export default function MobileHeader({
   menuItems,
   isMenuOpen,
   toggleMenu,
+  handleCategoryClick,
+  handleSubCategoryClick,
 }: MobileHeaderProps) {
+
+  const router = useRouter();
+
+  const isActiveCategory = (category: string) =>
+    router.pathname === "/category/[category]" && router.query.category === category;
+
+
+  const isActiveSubCategory = (category: string, subCategory: string) =>
+    router.pathname === "/category/[category]/[subcategory]" &&
+    router.query.category === category &&
+    router.query.subcategory === subCategory;
+
   return (
     <div className={styles.mobile}>
       <div className={`${styles.mHeader} ${isMenuOpen ? styles.act : ""}`}>
         <div className={styles.wrap}>
           <div className={styles.inner}>
             <h1>
-              <Link href={"#"} className={styles.logo}>
+              <Link href="/" className={styles.logo}>
                 <div className={styles.img}>
                   <Image src={HeaderLogo} alt="카페매니저" />
                 </div>
@@ -44,16 +61,26 @@ export default function MobileHeader({
         <aside className={`${styles.lnb} ${isMenuOpen ? styles.act : ""}`}>
           <div className={styles.inn}>
             <ul>
-              {menuItems.map((item, index) => (
-                <li className={styles.depth1} key={index}>
-                  <Link href={"#"} className={styles.depth_tit}>
+              {menuItems.map((item) => (
+                <li className={styles.depth1} key={item.title}>
+                  <Link
+                    href={`/products/${item.title}`}
+                    onClick={() => handleCategoryClick(item.title)}
+                    className={`${styles.depth_tit} ${isActiveCategory(item.title) ? styles.active : ""}`}
+                  >
                     {item.title}
                   </Link>
                   <div className={styles.depth2}>
                     <ul className={styles.inn}>
-                      {item.subItems.map((subItem, subIndex) => (
-                        <li key={subIndex}>
-                          <Link href={"#"}>{subItem}</Link>
+                      {item.subItems.map((subItem) => (
+                        <li key={subItem}>
+                          <Link
+                            href={`/products/${item.title}/${subItem}`}
+                            onClick={() => handleSubCategoryClick(item.title, subItem)}
+                            className={`${isActiveSubCategory(item.title, subItem) ? styles.active : ""}`}
+                          >
+                            {subItem}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -65,5 +92,6 @@ export default function MobileHeader({
         </aside>
       )}
     </div>
+
   );
 }
