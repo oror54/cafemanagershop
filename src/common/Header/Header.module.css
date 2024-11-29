@@ -247,6 +247,7 @@
     background-color: #fff;
     display: flex;
   }
+
   .mHeader > .wrap {
     width: 100%;
     padding: 0 16px;
@@ -299,6 +300,9 @@
     color: #000;
   }
   .header.act .mHeader .wrap h1 .logo span {
+    color: #000;
+  }
+  .mHeader.act .mHeader .wrap h1 .logo span {
     color: #000;
   }
   .mHeader .mBtn {
@@ -373,9 +377,10 @@
     z-index: 999;
     transition: all 0.3s;
   }
-  .mobile .lnb.act {
+  .lnb.act {
     display: block;
   }
+
   .mobile {
     display: flex;
     flex-direction: column;

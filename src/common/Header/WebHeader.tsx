@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import HeaderLogo from "$/assets/images/common/logo-character.svg";
-import { MenuItemProps } from "./Header.types";
+import { MenuItemProps } from "@/data/Header.types";
 
 interface WebHeaderProps {
   menuItems: MenuItemProps[];
@@ -32,6 +32,15 @@ export default function WebHeader({
     router.query.category === category &&
     router.query.subcategory === subCategory;
 
+  // Modified handleCategoryClick to navigate to first subcategory
+  const handleCategoryClickWithRedirection = (category: string, subItems: { name: string }[]) => {
+    handleCategoryClick(category); // Trigger original category handler
+    if (subItems.length > 0) {
+      const firstSubCategory = subItems[0].name;
+      router.push(`/products/${category}/${firstSubCategory}`); // Redirect to the first subcategory
+    }
+  };
+
   return (
     <div className={`${styles.WebHeader} ${isScrolled ? styles.fixed : ""}`}>
       <div className={styles.wrap}>
@@ -50,19 +59,19 @@ export default function WebHeader({
                 <Link
                   href={`/products/${item.title}`}
                   className={`${styles.depth_tit} ${isActiveCategory(item.title) ? styles.active : ""}`}
-                  onClick={() => handleCategoryClick(item.title)} // Trigger category handler
+                  onClick={() => handleCategoryClickWithRedirection(item.title, item.subItems)} // Trigger category handler with redirection
                 >
                   <span className={styles.depth_box}>{item.title}</span>
                 </Link>
                 <ul className={styles.depth2}>
                   {item.subItems.map((subItem) => (
-                    <li key={subItem}>
+                    <li key={subItem.name}>
                       <Link
-                        href={`/products/${item.title}/${subItem}`}
-                        className={`${isActiveSubCategory(item.title, subItem) ? styles.active : ""}`}
-                        onClick={() => handleSubCategoryClick(item.title, subItem)} // Trigger subcategory handler
+                        href={`/products/${item.title}/${subItem.name}`}
+                        className={`${isActiveSubCategory(item.title, subItem.name) ? styles.active : ""}`}
+                        onClick={() => handleSubCategoryClick(item.title, subItem.name)} // Trigger subcategory handler
                       >
-                        {subItem}
+                        {subItem.name}
                       </Link>
                     </li>
                   ))}
