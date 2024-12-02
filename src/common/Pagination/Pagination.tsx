@@ -1,6 +1,10 @@
 // components/Pagination.tsx
 import React from "react";
-import styles from "./Pagination.module.css"; // Assuming you have styles for pagination buttons
+import styles from "./Pagination.module.css";
+import Image from "next/image";// Assuming you have styles for pagination buttons
+
+import prev from "$/ico-prev.svg"
+import next from "$/ico-next.svg"
 
 interface PaginationProps {
     currentPage: number;
@@ -20,7 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
                 disabled={currentPage === 1}
                 className={`${styles.paginationButton} ${styles.prevButton}`}
             >
-                <i className={styles.icoPrev}></i>
+                <Image className={styles.ico} src={prev} alt="이전" />
             </button>
 
             {/* Page Number Buttons */}
@@ -43,7 +47,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
                 disabled={currentPage === totalPages}
                 className={`${styles.paginationButton} ${styles.nextButton}`}
             >
-                <i className={styles.icoNext}></i>
+                <Image className={styles.ico} src={next} alt="다음" />
             </button>
         </div>
     );

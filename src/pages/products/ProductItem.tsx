@@ -24,7 +24,6 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
                 <p>{product.categoryDetail}</p>
                 <h3>{product.name}</h3>
                 <p>{product.brand}</p>
-                <button className={styles.addToCartButton}>Add to Cart</button>
             </div>
         </div>
     );

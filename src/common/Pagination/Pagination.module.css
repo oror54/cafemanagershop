@@ -1,10 +1,10 @@
-.pagination { max-width: 1600px; display: flex
-; flex-direction: row; align-items: center; gap: 10px; width: 100%; margin: 0 auto; justify-content: center; } 
+.pagination { max-width: 1600px; display: flex; flex-direction: row; align-items: center; gap: 10px; width: 100%; margin: 0 auto; justify-content: center; padding: 20px 0;} 
 .pageNumbers { display: flex; flex-direction: row; align-items: center; gap: 10px; } 
-.paginationButton { padding: 10px 20px; margin: 0 5px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; transition: background-color 0.3s ease, color 0.3s ease; } 
+.paginationButton { padding: 5px; margin: 0 5px; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; transition: background-color 0.3s ease, color 0.3s ease; } 
 
-.paginationButton:hover { background-color: #0070f3; color: white; } 
-.paginationButton:disabled { cursor: not-allowed; opacity: 0.5; } 
+.paginationButton:hover { background-color: #F15A24; color: white; } 
+.paginationButton:hover .ico{filter:brightness(10);}
+.paginationButton:disabled { cursor: not-allowed; opacity: 0.5; background-color: #DFDFDF; } 
+.paginationButton:disabled .ico{filter:brightness(10);}
 .pageNumbers { display: flex; align-items: center; } 
-.active { background-color: #0070f3; color: white; font-weight: bold; } 
-.prevButton i, .nextButton i{ width: 24px; height: 24px; } 
+.active { background-color: #F15A24; color: white; font-weight: bold; } 

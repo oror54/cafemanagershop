@@ -11,6 +11,6 @@ export const products: Product[] = [
     category: "신선식품",
     categoryDetail: "우유",
     description: "",
-    url:"#"
+    url: "#"
   },
 ];
