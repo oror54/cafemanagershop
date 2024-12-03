@@ -1,12 +1,13 @@
+import { Product } from "@/data/Product.types";
 import milk from "./milk";
-import fruits from "./fruits";
 import dairy from "./dairy";
 import others from "./others";
 
-export const Fresh = {
-    all: [...milk, ...fruits, ...dairy, ...others], // 전체 데이터를 하나의 배열로 통합
+const Fresh: { all: Product[]; milk: Product[]; dairy: Product[]; others: Product[] } = {
+    all: [...milk, ...dairy, ...others],
     milk,
-    fruits,
     dairy,
     others,
 };
+
+export default Fresh;

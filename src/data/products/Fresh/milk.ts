@@ -9,6 +9,7 @@ const milk = [
         categoryDetail: "우유",
         imageUrl: milk01,
         description: "고소한 맛의 서울 흰우유.",
+        url:""
     },
     // 다른 우유 데이터 추가
 ];

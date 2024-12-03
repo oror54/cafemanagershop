@@ -1,6 +1,6 @@
 // data/products.ts
 import { Product } from "@/data/Product.types";
-import item01 from "$/assets/images/sub/category01/product.jpg";
+import item01 from "$/assets/images/sub/fresh/milk/product.jpg"
 
 export const products: Product[] = [
   {
