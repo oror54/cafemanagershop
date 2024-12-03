@@ -36,14 +36,18 @@ export default function CategoryPage() {
 
     const { subItems: subCategories, imageUrl: categoryImage } = currentMenu;
 
-    // 서브 카테고리로 리디렉션 처리
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
-        if (category && currentMenu && !isRedirecting && currentMenu.subItems.length > 0) {
+        if (category && currentMenu && !isRedirecting && currentMenu.subItems?.length > 0) {
             const firstSubCategory = currentMenu.subItems[0].name;
-            setIsRedirecting(true); // 리디렉션 상태로 변경
-            router.push(`/products/${currentCategory}/${firstSubCategory}`);
+            setIsRedirecting(true);
+            router.push(`/products/${currentCategory}/${firstSubCategory}`).then(() => {
+                setIsRedirecting(false);
+            });
         }
-    }, [category, currentCategory, currentMenu, isRedirecting, router]); // 의존성 배열에서 isRedirecting 포함
+    }, [category, currentCategory, currentMenu, isRedirecting, router]);
+
+
 
     const filteredProducts = productsByCategory[currentCategory] || [];
 
@@ -55,7 +59,6 @@ export default function CategoryPage() {
                         <Image
                             src={categoryImage}
                             alt={`${currentCategory} image`}
-                            layout="responsive"
                             width={800}
                             height={400}
                         />

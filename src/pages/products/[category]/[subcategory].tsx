@@ -41,13 +41,15 @@ export default function SubCategoryPage() {
     const handlePageChange = (newPage: number) => {
         router.push(`/products/${category}/${subcategory}?page=${newPage}`);
     };
+    console.log('Category:', category);
+    console.log('Subcategory:', subcategory);
 
     return (
         <div>
             {imageUrl && (
                 <section className={styles.sec01}>
                     <div className={styles.categoryImage}>
-                        <Image src={imageUrl} alt={`${category} image`} layout="responsive" />
+                        <Image src={imageUrl} alt={`${category} image`} />
                     </div>
                 </section>
             )}
