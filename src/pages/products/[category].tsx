@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-import { products } from "@/data/products";
+import { productsByCategory } from "@/data/products";
 import { menuItems } from "@/data/menuItems";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProductList from "./ProductList";
 import Link from "next/link";
 import styles from "./ProductPage.module.css";
@@ -11,65 +11,72 @@ export default function CategoryPage() {
     const router = useRouter();
     const { category } = router.query;
 
-    // 카테고리가 준비되었을 때, 첫 번째 서브 카테고리로 자동 이동
+    const [isCategoryReady, setCategoryReady] = useState(false);
+    const [isRedirecting, setIsRedirecting] = useState(false);
+
+    // category 값이 준비되었을 때 실행되는 useEffect
     useEffect(() => {
-        if (category) {
-            const currentMenu = menuItems.find((item) => item.title === category);
-            if (currentMenu && currentMenu.subItems.length > 0) {
-                // 첫 번째 서브 카테고리로 리디렉션
-                const firstSubCategory = currentMenu.subItems[0].name;
-                router.push(`/products/${category}/${firstSubCategory}`);
-            }
+        if (category && !Array.isArray(category)) {
+            setCategoryReady(true);
         }
-    }, [category, router]); // category 값이 변경될 때마다 실행
+    }, [category]);
 
-
-    // 카테고리 준비가 되지 않았으면 로딩 상태를 표시
-    if (!category) {
+    // category 값이 준비되지 않았을 때 로딩 화면을 표시
+    if (!isCategoryReady) {
         return <div>Loading...</div>;
     }
 
-    const currentMenu = menuItems.find((item) => item.title === category);
-    const subCategories = currentMenu ? currentMenu.subItems : [];
-    const categoryImage = currentMenu ? currentMenu.imageUrl : "";
+    const currentCategory = category as string;
+    const currentMenu = menuItems.find((item) => item.title === currentCategory);
 
-    // 카테고리별 제품 필터링
-    const filteredProducts = products.filter((product) => product.category === category);
+    // 카테고리가 유효하지 않으면 "Category not found" 화면 표시
+    if (!currentMenu) {
+        return <div>Category not found</div>;
+    }
 
+    const { subItems: subCategories, imageUrl: categoryImage } = currentMenu;
+
+    // 서브 카테고리로 리디렉션 처리
+    useEffect(() => {
+        if (category && currentMenu && !isRedirecting && currentMenu.subItems.length > 0) {
+            const firstSubCategory = currentMenu.subItems[0].name;
+            setIsRedirecting(true); // 리디렉션 상태로 변경
+            router.push(`/products/${currentCategory}/${firstSubCategory}`);
+        }
+    }, [category, currentCategory, currentMenu, isRedirecting, router]); // 의존성 배열에서 isRedirecting 포함
+
+    const filteredProducts = productsByCategory[currentCategory] || [];
 
     return (
         <div>
-            {/* 카테고리 이미지 */}
             {categoryImage && (
                 <section className={styles.sec01}>
                     <div className={styles.categoryImage}>
                         <Image
                             src={categoryImage}
-                            alt={`${category} image`}
+                            alt={`${currentCategory} image`}
                             layout="responsive"
+                            width={800}
+                            height={400}
                         />
                     </div>
                 </section>
             )}
             <section className={styles.sec02}>
                 <div className={styles.title}>
-                    <h3>{category}</h3>
+                    <h3>{currentCategory}</h3>
                 </div>
-                {/* 서브 카테고리 탭 */}
                 <div className={styles.subCategoryTabs}>
                     {subCategories.map((subCategory) => (
                         <Link
                             key={subCategory.name}
-                            href={`/products/${category}/${subCategory}`}
-                            passHref
-                            className={styles.subCategoryLink}
+                            href={`/products/${currentCategory}/${subCategory.name}`}
                         >
-                            {subCategory.name}
+                            <a className={styles.subCategoryLink}>{subCategory.name}</a>
                         </Link>
                     ))}
                 </div>
             </section>
-            {/* 전체 제품 리스트 */}
             <ProductList products={filteredProducts} />
         </div>
     );

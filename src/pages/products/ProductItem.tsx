@@ -1,6 +1,6 @@
 // components/ProductItem.tsx
 import React from "react";
-import { Product } from "@/data/Product.types"; // Assuming you have a Product type defined
+import { Product } from "@/data/Product.types";  // Assuming you have a Product type defined
 import Image from "next/image";
 import styles from "./ProductItem.module.css"; // Create styles for the product item
 

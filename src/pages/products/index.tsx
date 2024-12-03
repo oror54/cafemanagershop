@@ -1,6 +1,6 @@
 import React from "react";
 import ProductList from "./ProductList";
-import { products } from "@/data/products";
+import { allProducts } from "@/data/products";
 import styles from "./ProductPage.module.css";
 
 export default function ProductsPage() {
@@ -8,8 +8,8 @@ export default function ProductsPage() {
         <main>
             <div className={styles.sub}>
                 <h1>Our Products</h1>
-                <ProductList products={products} />
+                <ProductList products={allProducts} />
             </div>
-        </main >
+        </main>
     );
 }
