@@ -13,12 +13,7 @@ interface WebHeaderProps {
   handleSubCategoryClick?: (category: string, subCategory: string) => void;
 }
 
-export default function WebHeader({
-  menuItems,
-  isScrolled,
-  handleCategoryClick,
-  handleSubCategoryClick,
-}: WebHeaderProps) {
+export default function WebHeader({ menuItems, isScrolled }: WebHeaderProps) {
   const router = useRouter();
 
   // // Helper to check active category
@@ -41,6 +36,7 @@ export default function WebHeader({
   };
 
   const onClickSubCategory = (category: string, subCategory: string) => {
+    console.log(subCategory);
     router.push(`/products/${category}/${subCategory}`);
   };
 
@@ -53,8 +49,8 @@ export default function WebHeader({
           }`}
           onClick={() =>
             handleCategoryClickWithRedirection(
-              item.title,
-              item.subItems[0].name
+              item.realTitle,
+              item.subItems[0].realName
             )
           }
         >
@@ -69,7 +65,9 @@ export default function WebHeader({
                     ? styles.active
                     : ""
                 }`}
-                onClick={() => onClickSubCategory(item.title, subItem.name)}
+                onClick={() =>
+                  onClickSubCategory(item.realTitle, subItem.realName)
+                }
               >
                 {subItem.name}
               </button>

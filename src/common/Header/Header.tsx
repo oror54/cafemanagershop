@@ -10,7 +10,6 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
-  console.log(router);
 
   useEffect(() => {
     if (isMobileMenuOpen) {

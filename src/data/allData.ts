@@ -1,21 +1,24 @@
 import milk01 from "$/assets/images/sub/fresh/milk/product.jpg";
 import item01 from "$/assets/images/sub/fresh/dairy/item01.jpg";
 import item02 from "$/assets/images/sub/fresh/dairy/item02.jpg";
+import { StaticImageData } from "next/image";
 
 type dataType = {
   id: number;
   category: string;
   subCategory: string;
-  productName: string;
-  imgUrl: HTMLImageElement | string;
-  path: string;
+  brand: string;
+  name: string;
+  imageUrl: string | StaticImageData;
+  description: string;
+  url: string;
 };
 
-const allData: dataType = [
+export const allData: dataType[] = [
   {
     id: 0,
     category: "fresh",
-    categoryDetail: "mlik",
+    subCategory: "mlik",
     name: "서울 흰우유(1,000mL)",
     brand: "서울우유",
     imageUrl: milk01,
@@ -24,8 +27,8 @@ const allData: dataType = [
   },
   {
     id: 1,
-    category: "Fresh",
-    categoryDetail: "dairy",
+    category: "fresh",
+    subCategory: "dairy",
     name: "신선한 우유로 만든 생크림",
     brand: "서울우유",
     imageUrl: item01,
@@ -34,8 +37,8 @@ const allData: dataType = [
   },
   {
     id: 2,
-    category: "Fresh",
-    categoryDetail: "dairy",
+    category: "fresh",
+    subCategory: "dairy",
     name: "서울우유 연유",
     brand: "서울우유",
     imageUrl: item02,
@@ -44,8 +47,8 @@ const allData: dataType = [
   },
   {
     id: 3,
-    category: "Fresh",
-    categoryDetail: "other",
+    category: "fresh",
+    subCategory: "other",
     name: "181라운지 더치커피",
     brand: "(주)빈커스텀컴퍼니",
     imageUrl: item01,
@@ -54,8 +57,8 @@ const allData: dataType = [
   },
   {
     id: 4,
-    category: "Fresh",
-    categoryDetail: "Fruit",
+    category: "fresh",
+    subCategory: "fruit",
     name: "사과",
     brand: "청도",
     imageUrl: item01,
@@ -64,8 +67,8 @@ const allData: dataType = [
   },
   {
     id: 5,
-    category: "Fresh",
-    categoryDetail: "Fruit",
+    category: "fresh",
+    subCategory: "fruit",
     name: "귤(3kg)",
     brand: "제주도",
     imageUrl: item01,
