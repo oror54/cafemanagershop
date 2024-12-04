@@ -187,7 +187,7 @@
 .gnb .depth1:hover .depth2 li {
   opacity: 1;
 }
-.gnb .depth2 li a {
+.gnb .depth2 li button {
   font-size: 16px;
   color: #000;
   letter-spacing: -0.75px;
@@ -195,10 +195,10 @@
   font-family: "Pretendard";
   font-weight: 500;
 }
-.gnb .depth2 li a:hover {
+.gnb .depth2 li button:hover {
   color: #f15a24;
 }
-.gnb .depth2 li a.active {
+.gnb .depth2 li button.active {
   color: #f15a24;
 }
 
