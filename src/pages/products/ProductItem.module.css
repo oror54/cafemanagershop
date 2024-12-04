@@ -1,1 +1,8 @@
-.productItem {display: flex;}
+.productItem { display: flex; width: 100%; flex-direction: column; align-items: center; gap: 20px; } 
+.productImage { width: 100%; height: 400px; } 
+.productImage img { width: 100%; height: 100%; object-fit: cover; } 
+
+.productDetails { display: flex; width: 100%; flex-direction: column; align-items: flex-start; gap: 10px; } 
+.productDetails .cate { color: #f15a24; text-align: center; font-family: Paperlogy; font-size: 18px; font-style: normal; font-weight: 700; line-height: 140%; letter-spacing: -0.75px; } 
+.productDetails .name { width: 100%; overflow: hidden; color: #000; text-align: center; text-overflow: ellipsis; font-family: Paperlogy; font-size: 20px; font-style: normal; font-weight: 600; line-height: 140%; letter-spacing: -0.75px; text-align: left; overflow: hidden; white-space: nowrap; } 
+.productDetails .brand { color: #727272; text-align: center; font-family: Paperlogy; font-size: 14px; font-style: normal; font-weight: 600; line-height: 140%; letter-spacing: -0.75px; width: 100%; overflow: hidden; text-align: left; overflow: hidden; white-space: nowrap; } 

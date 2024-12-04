@@ -1,8 +1,9 @@
 // components/ProductItem.tsx
 import React from "react";
-import { Product } from "@/data/Product.types";  // Assuming you have a Product type defined
+import Link from "next/link";
+import { Product } from "@/data/Product.types";
 import Image from "next/image";
-import styles from "./ProductItem.module.css"; // Create styles for the product item
+import styles from "./ProductItem.module.css";
 
 interface ProductItemProps {
     product: Product;
@@ -10,22 +11,25 @@ interface ProductItemProps {
 
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
     return (
-        <div className={styles.productItem}>
+        <Link
+            href={`/products/${product.category}/${product.subCategory}/${product.id}`}
+            passHref
+            className={styles.productItem}
+        >
             <div className={styles.productImage}>
                 <Image
-                    src={product.imageUrl} // Make sure your product has an imageUrl
+                    src={product.imageUrl}
                     alt={product.name}
                     width={300}
                     height={300}
-                    layout="responsive"
                 />
             </div>
             <div className={styles.productDetails}>
-                <p>{product.categoryDetail}</p>
-                <h3>{product.name}</h3>
-                <p>{product.brand}</p>
+                <p className={styles.cate}>{product.categoryDetail}</p>
+                <h3 className={styles.name}>{product.name}</h3>
+                <p className={styles.brand}>{product.brand}</p>
             </div>
-        </div>
+        </Link>
     );
 };
 

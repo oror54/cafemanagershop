@@ -80,7 +80,9 @@ export default function CategoryPage() {
                     ))}
                 </div>
             </section>
-            <ProductList products={filteredProducts} />
+            <section className={styles.sec03}>
+                <ProductList products={filteredProducts} />
+            </section>
         </div>
     );
 }

@@ -7,7 +7,6 @@ export default function ProductsPage() {
     return (
         <main>
             <div className={styles.sub}>
-                <h1>Our Products</h1>
                 <ProductList products={allProducts} />
             </div>
         </main>

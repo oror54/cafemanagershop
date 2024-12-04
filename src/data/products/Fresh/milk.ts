@@ -1,4 +1,4 @@
-import milk01 from "$/assets/images/sub/fresh/milk/product.jpg"
+import milk01 from "$/assets/images/sub/fresh/milk/item01.jpg"
 
 const milk = [
     {
@@ -9,7 +9,7 @@ const milk = [
         categoryDetail: "우유",
         imageUrl: milk01,
         description: "고소한 맛의 서울 흰우유.",
-        url:""
+        url: ""
     },
     // 다른 우유 데이터 추가
 ];

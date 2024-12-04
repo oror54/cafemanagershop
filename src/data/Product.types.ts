@@ -7,8 +7,10 @@ export interface Product {
     brand: string;
     imageUrl: string | StaticImageData;
     category: string;
+    subCategory: string;
     categoryDetail: string;
     description?: string;
+    categoryKo: string;
     url: string;// Optional field
 }
 

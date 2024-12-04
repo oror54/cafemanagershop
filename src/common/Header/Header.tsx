@@ -46,12 +46,14 @@ export default function Header() {
     router.push(`/products/${category}/${subCategory}`);
   };
 
+  // 상세페이지인지 확인하는 로직
+  const isProductPage = router.pathname.startsWith('/products/') && router.query.productId;
+
   return (
     <header
       id="header"
-      className={`${styles.header} ${isHovered ? styles.on : ""} ${
-        isScrolled ? styles.fixed : ""
-      }`}
+      className={`${styles.header} ${isHovered || isProductPage ? styles.on : ""} ${isScrolled ? styles.fixed : ""
+        } ${isProductPage ? 'white' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

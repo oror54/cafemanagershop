@@ -40,6 +40,8 @@ export default function MobileHeader({
     if (subItems.length > 0) {
       const firstSubCategory = subItems[0].name;
       router.push(`/products/${category}/${firstSubCategory}`); // Redirect to the first subcategory
+    } else {
+      router.push(`/products/${category}`); // If no subcategory, just navigate to category
     }
   };
 
@@ -47,6 +49,7 @@ export default function MobileHeader({
   const handleSubCategoryNavigation = (category: string, subCategory: string) => {
     handleSubCategoryClick(category, subCategory); // Trigger subcategory handler
     toggleMenu(); // Close the menu
+    router.push(`/products/${category}/${subCategory}`); // Navigate to the subcategory
   };
 
 
