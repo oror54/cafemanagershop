@@ -1,6 +1,9 @@
 .productItem { display: flex; width: 100%; flex-direction: column; align-items: center; gap: 20px; } 
-.productImage { width: 100%; height: 400px; } 
-.productImage img { width: 100%; height: 100%; object-fit: cover; } 
+
+.productImage { width: 100%; height: 400px; overflow: hidden; } 
+.productImage img { width: 100%; height: 100%; object-fit: contain; transition: all 0.3s; } 
+
+.productItem:hover .productImage img  {transform:scale(1.05);}
 
 .productDetails { display: flex; width: 100%; flex-direction: column; align-items: flex-start; gap: 10px; } 
 .productDetails .cate { color: #f15a24; text-align: center; font-family: Paperlogy; font-size: 18px; font-style: normal; font-weight: 700; line-height: 140%; letter-spacing: -0.75px; } 

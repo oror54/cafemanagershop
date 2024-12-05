@@ -22,7 +22,7 @@
 
 
 /* productList */
-.productList { max-width:1600px; width: 100%;; background: #fff; padding: 50px 0; display: grid; margin: 0 auto; justify-content: center; gap: 30px; justify-items: start; align-items: start; gap: 30px; grid-template-columns: 1fr 1fr 1fr 1fr;
+.productList { max-width:1600px; width: 100%;; background: #fff; padding: 50px 16px; display: grid; margin: 0 auto; justify-content: center; gap: 30px; justify-items: start; align-items: start; gap: 30px; grid-template-columns: 1fr 1fr 1fr 1fr;
 } 
 
 @media screen and (max-width: 475px){
