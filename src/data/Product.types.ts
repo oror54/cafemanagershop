@@ -9,7 +9,7 @@ export interface Product {
     category: string;
     subCategory: string;
     categoryDetail: string;
-    description?: string;
+    description: string | StaticImageData;
     categoryKo: string;
     url: string;// Optional field
 }

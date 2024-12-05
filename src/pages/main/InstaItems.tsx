@@ -46,7 +46,6 @@ const InstaItems = () => {
                                             alt={post.alt}
                                             className="img"
                                             loading="lazy"
-                                            layout="intrinsic" // Added layout type
                                         />
                                     </div>
                                     <div className="insta-hov">
@@ -68,7 +67,6 @@ const InstaItems = () => {
                                             alt={post.alt}
                                             className="img"
                                             loading="lazy"
-                                            layout="intrinsic" // Added layout type
                                         />
                                     </div>
                                     <div className="insta-hov">

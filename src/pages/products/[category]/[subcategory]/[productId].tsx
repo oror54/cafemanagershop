@@ -49,7 +49,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             </section>
             <section className={styles.Details}>
                 <div className={styles.description}>
-                    {product.description}
+                    <Image
+                        src={product.description}
+                        alt={product.name}
+                        width={1000}
+                    />
                 </div>
             </section>
             <section className={styles.BackButtonSection}>

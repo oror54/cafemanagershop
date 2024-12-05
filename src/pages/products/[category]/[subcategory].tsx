@@ -50,7 +50,7 @@ export default function SubCategoryPage() {
       {imageUrl && (
         <section className={styles.sec01}>
           <div className={styles.categoryImage}>
-            <Image src={imageUrl} alt={`${category} image`} />
+            <Image src={imageUrl} alt={`${category} image`} priority={false} />
           </div>
         </section>
       )}
@@ -70,9 +70,8 @@ export default function SubCategoryPage() {
               key={realName}
               href={`/products/${category}/${realName}`}
               passHref
-              className={`${styles.subCategoryLink} ${
-                subcategory === realName ? styles.active : ""
-              }`}
+              className={`${styles.subCategoryLink} ${subcategory === realName ? styles.active : ""
+                }`}
             >
               <div className={styles.tabInner}>
                 <div className={styles.tabIcon}>

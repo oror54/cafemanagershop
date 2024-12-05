@@ -14,6 +14,11 @@ letter-spacing: -0.75px; }
 letter-spacing: -0.75px; } 
 .TitleText .brand { color: #727272; text-align: center; font-family: Paperlogy; font-size: 14px; font-style: normal; font-weight: 600; line-height: 140%; /* 28px */
 letter-spacing: -0.75px; } 
+
+
+.Details{display:flex; padding: 30px 0; width: 100%;}
+.Details .description{max-width: 1000px; width: 100%; margin: 0 auto;}
+.Details .description img{width: 100%;height: auto; object-fit: contain;}
 .BackButtonSection { margin:50px 0; text-align: center; } 
 
 .backButton { background-color: #fff; color: #F15A24; padding: 10px 20px; cursor: pointer; font-family: Paperlogy; font-size: 18px; font-style: normal; font-weight: 600; border-radius: 5px; font-size: 16px; border: 1px solid #F15A24; transition: all 0.3s; } 

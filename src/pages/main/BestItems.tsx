@@ -4,56 +4,10 @@ import { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { allData } from "@/data/allData";
 
-// 이미지
-import products1 from "$/assets/images/main/section02/sec2-item01.png";
-import products2 from "$/assets/images/main/section02/sec2-item02.png";
-import products3 from "$/assets/images/main/section02/sec2-item03.png";
-import products4 from "$/assets/images/main/section02/sec2-item04.png";
-import products5 from "$/assets/images/main/section02/sec2-item05.png";
-
-const products = [
-    {
-        id: 1,
-        imageUrl: products1,
-        category: "원두",
-        name: "30초 블렌드",
-        brand: "전광수커피",
-        link: "#",
-    },
-    {
-        id: 2,
-        imageUrl: products2,
-        category: "원두",
-        name: "30초 블렌드",
-        brand: "전광수커피",
-        link: "#",
-    },
-    {
-        id: 3,
-        imageUrl: products3,
-        category: "원두",
-        name: "30초 블렌드",
-        brand: "전광수커피",
-        link: "#",
-    },
-    {
-        id: 4,
-        imageUrl: products4,
-        category: "원두",
-        name: "30초 블렌드",
-        brand: "전광수커피",
-        link: "#",
-    },
-    {
-        id: 5,
-        imageUrl: products5,
-        category: "원두",
-        name: "30초 블렌드",
-        brand: "전광수커피",
-        link: "#",
-    },
-];
+const bestItems = allData.filter(item => item.best);
 
 const BestItems = () => {
     const swiperRef = useRef<SwiperType | null>(null);
@@ -127,7 +81,7 @@ const BestItems = () => {
                     },
                 }}
             >
-                {products.map((product) => (
+                {bestItems.map((product) => (
                     <SwiperSlide key={product.id}>
                         <div className="best-item">
                             <div className="product">
@@ -142,10 +96,13 @@ const BestItems = () => {
                                     <span className="p-cate">{product.category}</span>
                                     <strong className="p-name">{product.name}</strong>
                                     <span className="p-brand">{product.brand}</span>
-                                    <a href={product.link} className="view-detail">
+                                    <Link
+                                        href={`/products/${product.category}/${product.subCategory}/${product.id}`}
+                                        className="view-detail"
+                                    >
                                         <span>자세히 보기</span>{" "}
                                         <i className="arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
