@@ -38,22 +38,16 @@ export default function Header() {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
-  const handleCategoryClick = (category: string) => {
-    router.push(`/products/${category}`);
-  };
-
-  const handleSubCategoryClick = (category: string, subCategory: string) => {
-    router.push(`/products/${category}/${subCategory}`);
-  };
-
   // 상세페이지인지 확인하는 로직
-  const isProductPage = router.pathname.startsWith('/products/') && router.query.productId;
+  const isProductPage =
+    router.pathname.startsWith("/products/") && router.query.productId;
 
   return (
     <header
       id="header"
-      className={`${styles.header} ${isHovered || isProductPage ? styles.on : ""} ${isScrolled ? styles.fixed : ""
-        } ${isProductPage ? 'white' : ''}`}
+      className={`${styles.header} ${
+        isHovered || isProductPage ? styles.on : ""
+      } ${isScrolled ? styles.fixed : ""} ${isProductPage ? "white" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -62,8 +56,6 @@ export default function Header() {
         menuItems={menuItems}
         isMenuOpen={isMobileMenuOpen}
         toggleMenu={toggleMobileMenu}
-        handleCategoryClick={handleCategoryClick}
-        handleSubCategoryClick={handleSubCategoryClick}
       />
     </header>
   );

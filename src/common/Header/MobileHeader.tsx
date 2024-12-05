@@ -10,48 +10,35 @@ interface MobileHeaderProps {
   menuItems: MenuItemProps[];
   isMenuOpen: boolean;
   toggleMenu: () => void;
-  handleCategoryClick: (category: string) => void;
-  handleSubCategoryClick: (category: string, subCategory: string) => void;
 }
 
 export default function MobileHeader({
   menuItems,
   isMenuOpen,
   toggleMenu,
-  handleCategoryClick,
-  handleSubCategoryClick,
 }: MobileHeaderProps) {
-
   const router = useRouter();
 
   const isActiveCategory = (category: string) =>
-    router.pathname === "/category/[category]" && router.query.category === category;
-
+    router.pathname === "/category/[category]" &&
+    router.query.category === category;
 
   const isActiveSubCategory = (category: string, subCategory: string) =>
     router.pathname === "/category/[category]/[subcategory]" &&
     router.query.category === category &&
     router.query.subcategory === subCategory;
 
-  // Handle category click and navigate to the first subcategory if available
-  const handleCategoryNavigation = (category: string, subItems: { name: string }[]) => {
-    handleCategoryClick(category); // Trigger the category handler
-    toggleMenu(); // Close the menu
-    if (subItems.length > 0) {
-      const firstSubCategory = subItems[0].name;
-      router.push(`/products/${category}/${firstSubCategory}`); // Redirect to the first subcategory
-    } else {
-      router.push(`/products/${category}`); // If no subcategory, just navigate to category
-    }
+  const handleCategoryClickWithRedirection = (
+    category: string,
+    name: string
+  ) => {
+    router.push(`/products/${category}/${name}`);
   };
 
-  // Handle subcategory click
-  const handleSubCategoryNavigation = (category: string, subCategory: string) => {
-    handleSubCategoryClick(category, subCategory); // Trigger subcategory handler
-    toggleMenu(); // Close the menu
-    router.push(`/products/${category}/${subCategory}`); // Navigate to the subcategory
+  const onClickSubCategory = (category: string, subCategory: string) => {
+    console.log(subCategory);
+    router.push(`/products/${category}/${subCategory}`);
   };
-
 
   return (
     <div className={styles.mobile}>
@@ -83,24 +70,38 @@ export default function MobileHeader({
             <ul>
               {menuItems.map((item) => (
                 <li className={styles.depth1} key={item.title}>
-                  <Link
-                    href={`/products/${item.title}`}
-                    onClick={() => handleCategoryNavigation(item.title, item.subItems)} // Trigger category click with redirection
-                    className={`${styles.depth_tit} ${isActiveCategory(item.title) ? styles.active : ""}`}
+                  <button
+                    onClick={() =>
+                      handleCategoryClickWithRedirection(
+                        item.realTitle,
+                        item.subItems[0].realName
+                      )
+                    }
+                    className={`${styles.depth_tit} ${
+                      isActiveCategory(item.title) ? styles.active : ""
+                    }`}
                   >
                     {item.title}
-                  </Link>
+                  </button>
                   <div className={styles.depth2}>
                     <ul className={styles.inn}>
                       {item.subItems.map((subItem) => (
                         <li key={subItem.name}>
-                          <Link
-                            href={`/products/${item.title}/${subItem.name}`}
-                            onClick={() => handleSubCategoryNavigation(item.title, subItem.name)} // Trigger subcategory click
-                            className={`${isActiveSubCategory(item.title, subItem.name) ? styles.active : ""}`}
+                          <button
+                            onClick={() =>
+                              onClickSubCategory(
+                                item.realTitle,
+                                subItem.realName
+                              )
+                            } // Trigger subcategory click
+                            className={`${
+                              isActiveSubCategory(item.title, subItem.name)
+                                ? styles.active
+                                : ""
+                            }`}
                           >
                             {subItem.name}
-                          </Link>
+                          </button>
                         </li>
                       ))}
                     </ul>
@@ -112,6 +113,5 @@ export default function MobileHeader({
         </aside>
       )}
     </div>
-
   );
 }
