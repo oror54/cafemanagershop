@@ -1,11 +1,11 @@
-import "@/styles/main/section02/BestItems.css";
+import styles from"@/styles/main/section02/BestItems.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
 import Image from "next/image";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { allData } from "@/data/allData";
+import { allData } from "src/data/allData"; 
 
 const bestItems = allData.filter(item => item.best);
 
@@ -35,7 +35,7 @@ const BestItems = () => {
     }, []);
 
     return (
-        <div className="swiperContainer">
+        <div className={styles.swiperContainer}>
             <Swiper
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
                 spaceBetween={30}
@@ -83,25 +83,25 @@ const BestItems = () => {
             >
                 {bestItems.map((product) => (
                     <SwiperSlide key={product.id}>
-                        <div className="best-item">
-                            <div className="product">
-                                <div className="img">
+                        <div className={styles.bestItem}>
+                            <div className={styles.product}>
+                                <div className={styles.img}>
                                     <Image
                                         src={product.imageUrl}
                                         alt={product.name}
                                         loading="eager"
                                     />
                                 </div>
-                                <div className="text">
-                                    <span className="p-cate">{product.category}</span>
-                                    <strong className="p-name">{product.name}</strong>
-                                    <span className="p-brand">{product.brand}</span>
+                                <div className={styles.text}>
+                                    <span className={styles.pCate}>{product.category}</span>
+                                    <strong className={styles.pName}>{product.name}</strong>
+                                    <span className={styles.pBrand}>{product.brand}</span>
                                     <Link
                                         href={`/products/${product.category}/${product.subCategory}/${product.id}`}
-                                        className="view-detail"
+                                        className={styles.viewDetail}
                                     >
                                         <span>자세히 보기</span>{" "}
-                                        <i className="arrow-right"></i>
+                                        <i className={styles.arrowRight}></i>
                                     </Link>
                                 </div>
                             </div>
@@ -109,19 +109,19 @@ const BestItems = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div className="wrap">
-                <div className="best-contr">
-                    <div className="swiper-pagination best-pagination"></div>
-                    <div className="contr">
-                        <button type="button" className="left best-prev"></button>
+            <div className={styles.wrap}>
+                <div className={styles.bestContr}>
+                    <div className={`${styles['swiper-pagination']} bestPagination`}></div>
+                    <div className={styles.contr}>
+                    <button type="button" className={`${styles.left} ${styles.bestPrev}`}></button>
                         <button
                             type="button"
-                            className="start best-play toggle_on"
+                            className={`${styles.start} ${styles.bestPlay} ${styles.toggleOn}`}
                         >
-                            <i className="pause"></i>
-                            <i className="start"></i>
+                            <i className={styles.pause}></i>
+                            <i className={styles.start}></i>
                         </button>
-                        <button type="button" className="right best-next"></button>
+                        <button type="button" className={`${styles.right} ${styles.bestNext}`}></button>
                     </div>
                 </div>
             </div>
