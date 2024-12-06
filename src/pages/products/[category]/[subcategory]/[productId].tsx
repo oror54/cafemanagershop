@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { allData } from "@/data/allData";
-import { Product } from "@/data/Product.types";
+import { allData } from "src/data/allData"; 
+import { Product } from "src/data/Product.types"; 
 import Image from "next/image";
 import styles from "./ItemDetail.module.css";
 

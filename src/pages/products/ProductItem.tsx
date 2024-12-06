@@ -1,7 +1,7 @@
 // components/ProductItem.tsx
 import React from "react";
 import Link from "next/link";
-import { Product } from "@/data/Product.types";
+import { Product } from "src/data/Product.types"; 
 import Image from "next/image";
 import styles from "./ProductItem.module.css";
 

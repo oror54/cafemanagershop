@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import { productsByCategory } from "@/data/products";
-import { menuItems } from "@/data/menuItems";
+import { productsByCategory } from "src/data/products"; 
+import { menuItems } from "src/data/menuItems"; 
 import React, { useEffect, useState } from "react";
 import ProductList from "./ProductList";
 import Link from "next/link";

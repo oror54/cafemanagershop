@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 
 import ProductList from "../ProductList";
-import { menuItems } from "@/data/menuItems";
+import { menuItems } from "src/data/menuItems"; 
 import Image from "next/image";
 import styles from "../ProductPage.module.css";
 import Link from "next/link";
-import Pagination from "@/common/Pagination/Pagination";
-import { allData } from "@/data/allData";
+import Pagination from "src/common/Pagination/Pagination"; 
+import { allData } from "src/data/allData"; 
 
 export default function SubCategoryPage() {
   const router = useRouter();

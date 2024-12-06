@@ -3,7 +3,7 @@ import WebHeader from "./WebHeader";
 import MobileHeader from "./MobileHeader";
 import styles from "./Header.module.css";
 import { useRouter } from "next/router";
-import { menuItems } from "@/data/menuItems";
+import { menuItems } from "src/data/menuItems"; 
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

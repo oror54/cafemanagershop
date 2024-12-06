@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import HeaderLogo from "$/assets/images/common/logo-character.svg";
-import { MenuItemProps } from "@/data/Header.types";
+import { MenuItemProps } from "src/data/Header.types"; 
 
 interface WebHeaderProps {
   menuItems: MenuItemProps[];

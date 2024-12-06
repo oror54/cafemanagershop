@@ -1,6 +1,6 @@
 import React from "react";
 import ProductList from "./ProductList";
-import { allProducts } from "@/data/products";
+import { allProducts } from "src/data/products";
 import styles from "./ProductPage.module.css";
 
 export default function ProductsPage() {

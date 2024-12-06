@@ -1,4 +1,4 @@
-import { Product } from "@/data/Product.types";
+import { Product } from "src/data/Product.types"; 
 import milk from "./milk";
 
 

@@ -4,78 +4,78 @@
   overflow: hidden;
 }
 
-.swiper-slide.best-item {
+.bestItem {
   width: auto;
 }
-.best-item .product {
+.bestItem .product {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
 }
-.best-item .product .img {
+.bestItem .product .img {
   width: 400px;
   height: 400px;
 }
-.best-item .product .img img {
+.bestItem .product .img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-.best-item .product .text {
+.bestItem .product .text {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
-.best-item .product .text .p-cate {
+.bestItem .product .text .p-cate {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.75px;
   color: #f15a24;
   font-family: "Paperlogy";
 }
-.best-item .product .text .p-name {
+.bestItem .product .text .pName {
   font-size: 20px;
   letter-spacing: -0.75px;
   color: #000;
   font-family: "Paperlogy";
 }
-.best-item .product .text .p-brand {
+.bestItem .product .text .pBrand {
   color: #555;
   font-size: 16px;
   letter-spacing: -0.75px;
   font-family: "Paperlogy";
 }
-.best-item .product .text .view-detail {
+.bestItem .product .text .viewDetail {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.best-item .product .text .view-detail span {
+.bestItem .product .text .viewDetail span {
   font-size: 14px;
   letter-spacing: -0.75px;
   font-weight: 500;
   color: #000;
   transition: all 0.3s;
 }
-.best-item > .product .text .view-detail .arrow-right {
+.bestItem > .product .text .viewDetail .arrowRight {
   width: 24px;
   height: 24px;
-  background: url($/assets/images/main/section02/arrow-right-view.svg) no-repeat
+  background: url(/assets/images/main/section02/arrow-right-view.svg) no-repeat
     50% 50%;
   background-size: contain;
   filter: grayscale(1) brightness(0);
   transition: all 0.3s;
 }
-.best-item .product .text .view-detail:hover span {
+.bestItem .product .text .viewDetail:hover span {
   color: #f15a24;
   font-weight: 600;
 }
-.best-item .product .text .view-detail:hover .arrow-right {
+.bestItem .product .text .viewDetail:hover .arrowRight {
   filter: grayscale(0) brightness(1);
 }
-.best-contr {
+.bestContr {
   max-width: 1600px;
   margin: 0 auto;
   display: flex;
@@ -85,14 +85,14 @@
   padding: 50px 20px;
 }
 
-.best-pagination {
+.bestPagination {
   width: 100%;
   position: relative;
   height: 2px;
   background-color: #e5e5e5;
 }
 
-.best-pagination > span {
+.bestPagination > span {
   background-color: #f15a24;
   height: 2px;
 }
@@ -104,39 +104,39 @@
   width: 100%;
 }
 
-.best-contr .contr {
+.bestContr .contr {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.best-contr .contr .best-prev {
+.bestContr .contr .bestPrev {
   width: 30px;
   height: 30px;
   display: block;
-  background: url($/assets/images/main/section02/Arrow-Left-slide.svg) no-repeat
+  background: url(/assets/images/main/section02/Arrow-Left-slide.svg) no-repeat
     50% 50%;
   background-size: contain;
   filter: grayscale(1) brightness(0);
   transition: all 0.3s;
 }
-.best-contr .contr .best-prev:hover {
+.bestContr .contr .bestPrev:hover {
   filter: grayscale(0) brightness(1);
 }
-.best-contr .contr .best-next {
+.bestContr .contr .bestNext {
   width: 30px;
   height: 30px;
   display: block;
-  background: url($/assets/images/main/section02/Arrow-Right-slide.svg)
+  background: url(/assets/images/main/section02/Arrow-Right-slide.svg)
     no-repeat 50% 50%;
   background-size: contain;
   filter: grayscale(1) brightness(0);
   transition: all 0.3s;
 }
-.best-contr .contr .best-next:hover {
+.bestContr .contr .bestNext:hover {
   filter: grayscale(0) brightness(1);
 }
-.best-contr .contr .best-play {
+.bestContr .contr .bestPlay {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -149,11 +149,11 @@
   position: relative;
   transition: all 0.3s;
 }
-.best-contr .contr .best-play:hover {
+.bestContr .contr .bestPlay:hover {
   background-color: #ff6e3a;
   border-color: #ff6e3a;
 }
-.best-contr .contr .best-play i.pause {
+.bestContr .contr .bestPlay i.pause {
   display: block;
   width: 20px;
   height: 20px;
@@ -162,7 +162,7 @@
   background-size: contain;
   transition: all 0.3s;
 }
-.best-contr .contr .best-play i.start {
+.bestContr .contr .bestPlay i.start {
   display: block;
   width: 20px;
   height: 20px;
@@ -172,19 +172,19 @@
   display: none;
   transition: all 0.3s;
 }
-.best-contr .contr .best-play.on {
+.bestContr .contr .bestPlay.on {
   background-color: #ff6e3a;
   border-color: #ff6e3a;
 }
-.best-contr .contr .best-play.on i.start {
+.bestContr .contr .bestPlay.on i.start {
   display: block;
 }
-.best-contr .contr .best-play.on i.pause {
+.bestContr .contr .bestPlay.on i.pause {
   display: none;
 }
 
 @media screen and (max-width: 800px) {
-  .best-contr .contr {
+  .bestContr .contr {
     display: none;
   }
 }

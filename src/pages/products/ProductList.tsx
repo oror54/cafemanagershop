@@ -1,6 +1,6 @@
 // components/ProductList.tsx
 import React from "react";
-import { Product } from "@/data/Product.types";  // Import the Product type
+import { Product } from "src/data/Product.types";  // Import the Product type
 import ProductItem from "./ProductItem";
 import styles from "./ProductPage.module.css";// Import the ProductItem component
 
